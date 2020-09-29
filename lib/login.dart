@@ -31,18 +31,6 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
 
-
-     var box = Hive.box('cbox');
-      // box.put("headname", "Dollarstir");
-     var islogin = box.get("islog");
-     print(islogin);
-     if(islogin=='1'){
-
-        Navigator.push(context, MaterialPageRoute(builder: (context){
-                return Home();
-              }));
-
-     }
     return Scaffold(
      body: Column(
         children: [
@@ -125,67 +113,67 @@ class LoginState extends State<Login> {
                         Container(
                           
                           child: RaisedButton(
-          onPressed: () async{
-            var resp = await login(emailController.text,passwordController.text);
-            print(resp);
-            if(resp=="enter email"){
+                          onPressed: () async{
+                            var resp = await login(emailController.text,passwordController.text);
+                            print(resp);
+                            if(resp=="enter email"){
 
-            }
-            else if(resp=="Please enter correct password"){
+                            }
+                            else if(resp=="Please enter correct password"){
 
-            }
-            else if(resp=="wrong"){
+                            }
+                            else if(resp=="wrong"){
 
-            }
+                            }
 
-            else{
-              setState(() {
-                uname =resp[0]['Name'];
-                umail = resp[0]['Email'];
-                upas = passwordController.text;
-                uid = resp[0]['UserId'];
-              });
+                            else{
+                              setState(() {
+                                uname =resp[0]['Name'];
+                                umail = resp[0]['Email'];
+                                upas = passwordController.text;
+                                uid = resp[0]['UserId'];
+                              });
 
-              var box = Hive.box('cbox');
+                              var box = Hive.box('cbox');
 
-              box.put('username', '$uname');
-              box.put('usermail', '$umail');
-              box.put('userpassword', '$upas');
-              box.put('myid','$uid');
-              box.put('islog','1');
-
-
-              
+                              box.put('username', '$uname');
+                              box.put('usermail', '$umail');
+                              box.put('userpassword', '$upas');
+                              box.put('myid','$uid');
+                              box.put('islog','1');
 
 
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return Home();
-              }));
+                              
 
 
-            }
-          },
-          textColor: Colors.white,
-          padding: const EdgeInsets.all(0.0),
-          child: Container(
-            width: 250,
-            alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: <Color>[
-                  Color(0xFF0D47A1),
-                  Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
-                ],
-              ),
-            ),
-            padding: const EdgeInsets.all(10.0),
-            child: const Text(
-              'Login',
-              style: TextStyle(fontSize: 18,)
-            ),
-          ),
-        ),
+                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return Home();
+                              }));
+
+
+                            }
+                          },
+                          textColor: Colors.white,
+                          padding: const EdgeInsets.all(0.0),
+                          child: Container(
+                            width: 250,
+                            alignment: Alignment.center,
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: <Color>[
+                                  Color(0xFF0D47A1),
+                                  Color(0xFF1976D2),
+                                  Color(0xFF42A5F5),
+                                ],
+                              ),
+                            ),
+                            padding: const EdgeInsets.all(10.0),
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(fontSize: 18,)
+                            ),
+                          ),
+                        ),
                           width: 250,
                           height: 40,
                           margin: EdgeInsets.only(
