@@ -49,7 +49,7 @@ class _AirDetState extends State<AirDet> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Posted on :" + widget.data['Origin']),
+                    Text("Posted on : ${widget.data['Origin']}"),
                   ],
                 ),
               ),

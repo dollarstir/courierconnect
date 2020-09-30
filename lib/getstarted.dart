@@ -123,14 +123,8 @@ class GetstartedState extends State<Getstarted> {
                     color: Colors.lightBlue,
                     textColor: Colors.white,
                     onPressed: () {
-                      var box = Hive.box('cbox');
-                      var islogin = box.get("islog");
-                      print(islogin);
-                      if(islogin == '1'){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                      } else
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()
-                      ));
+                      Hive.box("cbox").put("firstTime", false);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
                     },
                   ),
                 ],

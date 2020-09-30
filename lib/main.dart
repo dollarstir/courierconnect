@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import './home.dart';
 import './getstarted.dart';
+import 'login.dart';
 
 
 
@@ -28,6 +29,20 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
+
+  Widget checker() {
+    var box = Hive.box('cbox');
+    var firstTime = box.get("firstTime");
+    var islogin = box.get("islog");
+
+    if(firstTime == null) {
+      return Getstarted();
+    } else if (islogin == "1") {
+      return Home();
+    }
+
+    return Login();
+  }
   
 
   @override
@@ -36,7 +51,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       title: "Courier Connect Ltd",
       debugShowCheckedModeBanner: false,
-      home: Getstarted(),
+      home: checker(),
     );
   }
 }
