@@ -138,9 +138,6 @@ class HomeState extends State<Home> {
 }
 
 class HomeView extends StatelessWidget {
-  const HomeView({
-    Key key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -149,31 +146,44 @@ class HomeView extends StatelessWidget {
         padding: EdgeInsets.only(top: 10),
         child: ListView(
           children: [
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  // color: Colors.lightBlue,
-                  ),
-              child: Card(
-                elevation: 15,
-                child: Column(
-                  children: [
-                    Image.asset('assets/images/p1.jpg'),
-                    ListTile(
-                      title: Text(
-                          "At Courier Connect Limited we strive to achieve these through:"),
-                      subtitle: Text(
-                          "Treating everyone with honesty, fairness and respect. Conducting our business in a friendly environment with the highest level of integrity. Being Professional, Customer-Focused and result-oriented. Provision of excellent and efficient customer service for our clients. Investment in training staff "),
-                    ),
-                  ],
-                ),
+            Card(
+              clipBehavior: Clip.hardEdge,
+              elevation: 6,
+              margin: EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Image.asset('assets/images/p1.jpg'),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "At Courier Connect Limited we strive to achieve these through:", 
+                          style: TextStyle(
+                            color: Colors.blueGrey, 
+                            fontSize: 18.0, 
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Material(color: Colors.blueGrey, child: SizedBox(height: 0.8, width: 30.0,)),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                        child: Text(
+                          "Treating everyone with honesty, fairness and respect. Conducting our business in a friendly environment with the highest level of integrity. Being Professional, Customer-Focused and result-oriented. Provision of excellent and efficient customer service for our clients. Investment in training staff ",
+                          style: TextStyle(color: Colors.blueGrey, fontSize: 14.0),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  // color: Colors.lightBlue,
-                  ),
+              // color: Colors.lightBlue,
+              ),
               child: Card(
                 elevation: 15,
                 child: Column(

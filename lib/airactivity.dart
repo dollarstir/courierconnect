@@ -1,3 +1,4 @@
+import 'package:Courierconnect/airdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
@@ -18,15 +19,15 @@ class AiractState extends State<AirAct> {
 
 
 
-  //  navigateToNextActivity(BuildContext context, int dataHolder) {
+   navigateToNextActivity(BuildContext context, Map dataHolder) {
     
-  //    Navigator.of(context).push(
-  //       MaterialPageRoute(
-  //         builder: (context) => Newsdetails(dataHolder.toString())
-  //       )
-  //     );
+     Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => AirDet(dataHolder)
+        )
+      );
  
-  // }
+  }
 
   
   @override
@@ -69,16 +70,13 @@ class AiractState extends State<AirAct> {
                          elevation: 15,
                          child: ListTile(
                            leading: Icon(Icons.rss_feed),
-                           title: Text(snapshot.data[index].rBy),
-                           subtitle: Text(snapshot.data[index].tele),
+                           title: Text("${snapshot.data[index]['FullName']}"),
+                           subtitle: Text("${snapshot.data[index]['Email']}"),
                            onTap: () {
 
-                            //  navigateToNextActivity(context, snapshot.data[index].newsID);
+                            navigateToNextActivity(context, snapshot.data[index]);
 
-
-                             
                            },
-
                         ),
                       ),
                      );

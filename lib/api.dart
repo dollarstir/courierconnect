@@ -96,16 +96,14 @@ Future<void> getNews()async{
    
    var jsonData = jsonDecode(data.body);
 
-   List<Airactivi> airs =[];
-   for(var u in jsonData){
-     Airactivi aa = Airactivi(u['FullName'],u['Telephone'],u['Location'],u['Origin'],u['Destination'],u['Items'],u['Quantity'],u['Weight'],u['Dimensions'],u['PickupDate'],u['CompanyName'],u['CompanyAddress'],u['CompanyContact'],u['Country'],u['District'],u['RegDate']);
-     airs.add(aa);
-   }
+  //  List<Airactivi> airs =[];
+  //  for(var u in jsonData){
+  //    Airactivi aa = Airactivi(u['FullName'],u['Telephone'],u['Location'],u['Origin'],u['Destination'],u['Items'],u['Quantity'],u['Weight'],u['Dimensions'],u['PickupDate'],u['CompanyName'],u['CompanyAddress'],u['CompanyContact'],u['Country'],u['District'],u['RegDate']);
+  //    airs.add(aa);
+  //  }
 
-   print(airs.length);
-   return airs;
-
-
+  //  print(airs.length);
+   return jsonData;
 
   }
 
