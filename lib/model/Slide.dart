@@ -21,12 +21,12 @@ final Slidelist = [
   ),
   Slide(
     imageUrl: 'assets/images/ship4.jpg',
-    imTitle: 'Second Title',
-    imageDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ... packages and web page editors now use Lorem Ipsum as their default model text, and a search ... Contrary to popular belief, Lorem Ipsum is not simply random text.'
+    imTitle: 'About Us',
+    imageDescription: 'What you should know about us.We are a personalised shipping service, tailored to your shopping and shipping needs to Ghana by air and sea, from our countries of operation.We provide personalized shipping solutions, by air and sea, tailored to your specific needs. Our service is excellent for individuals and small to large businesses, as we ship a wide range of package types. You can choose to have your package delivered to your door or pick up from our local office.'
   ),
   Slide(
     imageUrl: 'assets/images/ship6.jpg',
-    imTitle: ' Third  Title',
-    imageDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ... packages and web page editors now use Lorem Ipsum as their default model text, and a search ... Contrary to popular belief, Lorem Ipsum is not simply random text.'
+    imTitle: ' OUR PROMISE TO YOU',
+    imageDescription: 'Every shipment will receive experienced professional, individual attention from order through pickup and delivery. If humanly possible, your goods will arrive on time, undamaged, every time.'
   )
 ];

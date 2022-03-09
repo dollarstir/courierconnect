@@ -31,8 +31,8 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
 
   Widget checker() {
-    var box = Hive.box('cbox');
-    var firstTime = box.get("firstTime");
+        var box = Hive.box('cbox');
+        var firstTime = box.get("firstTime");
     var islogin = box.get("islog");
 
     if(firstTime == null) {
